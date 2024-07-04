@@ -70,18 +70,5 @@
         </div>
       </div>
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-      $(".signup-show").click(function () {
-        $(".registration-form").show();
-        $(".login-form").hide();
-      });
-      $(".login-show").click(function () {
-        $(".registration-form").hide();
-        $(".login-form").show();
-        console.log("LOGIN SHOW CLICKED");
-      });
-    </script>
   </body>
 </html>
