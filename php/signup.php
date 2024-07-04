@@ -5,7 +5,7 @@ include "connection.php";
 $first_name = $_POST['first-name'];
 $last_name = $_POST['last-name'];
 $email = $_POST['email'];
-$password = $_POST['password']; // Hash the password
+$password = $_POST['password'];
 
 // Check if email already exists
 $sql = "SELECT * FROM user WHERE email=?";

@@ -5,32 +5,30 @@ include "connection.php";
 $email = $_POST['login-email'];
 $password = $_POST['login-password'];
 
-// Prepare SQL statement with a placeholder for the email
+    // Prepare and bind, agar format yang masuk ke database sesuai terhindar dari SQL injection
 $stmt = $conn->prepare("SELECT * FROM user WHERE email=?");
 $stmt->bind_param("s", $email); // Bind the email parameter
 
 // Execute the statement
 $stmt->execute();
-$result = $stmt->get_result(); // Get the result set
+$result = $stmt->get_result(); // Menambil hasil query
 
+// Jika query dapat data
 if ($result->num_rows > 0) {
     // User with given email found in the database
     $row = $result->fetch_assoc();
 
     // Verify password
     if ($password == $row['password']) {
-        // Password correct, redirect to index.html with last name as parameter
+        // Password correct, redirect ke index dan membawa param url dengan value last name -- tidak jadi dipakai
         header("Location: ../page-index.php?login={$row['last_name']}");
-        exit();
     } else {
         // Password incorrect, redirect back to login page with error message
         header("Location: ../page-login.php?error=password");
-        exit();
     }
 } else {
     // Email not found in the database, redirect back to login page with error message
     header("Location: ../page-login.php?error=email");
-    exit();
 }
 
 // Close prepared statement and database connection

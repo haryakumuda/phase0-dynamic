@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    // Prepare and bind
+    // Prepare and bind, agar format yang masuk ke database sesuai terhindar dari SQL injection
     $stmt = $conn->prepare("INSERT INTO user_message (first_name, last_name, email, message) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssss", $first_name, $last_name, $email, $message);
 
@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         // Display JavaScript alert and redirect
         echo "<script>alert('Message has been sent!'); window.location.href='../page-index.php';</script>";
-        exit();
     } else {
         echo "Error: " . $stmt->error;
     }
