@@ -54,12 +54,14 @@
                   id="email" />
                 <label for="email">Email</label>
               </div>
-
-<div class="form-floating mb-3">
-    <textarea class="form-control form-control-sm" id="message" name="message" placeholder="Message"></textarea>
-    <label for="message">Message</label>
-</div>
-
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control form-control-sm"
+                  id="message"
+                  name="message"
+                  placeholder="Message"></textarea>
+                <label for="message">Message</label>
+              </div>
               <div class="mt-3">
                 <button type="submit" class="btn btn-primary text-white">
                   Submit

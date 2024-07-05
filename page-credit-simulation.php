@@ -28,17 +28,6 @@
             src="assets/logo.png"
             class="navbar-brand-logo mx-3 mt-3 mb-3"
             alt="" />
-
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
           <div
             class="collapse navbar-collapse d-flex justify-content-end fs-4"
             id="navbarNavDropdown">
@@ -153,7 +142,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <div class="col-lg-4 col-md-6 mb-4">
             <h5 class="text-uppercase">Follow Us</h5>
             <ul class="list-unstyled mb-0">
               <li>
@@ -191,7 +180,7 @@
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <div class="col-lg-4 col-md-12 mb-4">
             <h5 class="text-uppercase">Newsletter</h5>
             <form onsubmit="showSubscribedMessage(event)">
               <div class="form-outline form-white mb-4">
